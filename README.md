@@ -1,4 +1,4 @@
-# Docker for fastText Training
+# Docker for fastText Model Training
 
 [fastText](https://fasttext.cc/) is a library for learning text classification and word representations,
 created by [Fascebook AI Research](https://research.fb.com/category/facebook-ai-research/).
@@ -12,7 +12,7 @@ Compiling fastText requires C++ build tool and other stuff that are usually not 
 This Dockerfile will create a small image that compiles everything for you.
 All you need to do is to supply the data (in the right format) and run fastText.
 
-The difference betweeb this Dockerfile and other is that this is based on the Ubuntu image, and does not require Python.
+The difference between this Dockerfile and other is that this is based on the Ubuntu image, and does not require Python.
 
 ## Usage
 
@@ -28,7 +28,7 @@ docker build -t fasttext .
 ```
 
 ### Train the model
-Run the training container by mounting two volumes, `/data` and `/models`, and then supplying the parameters that fastText accept:
+Run the training container by mounting two volumes, `/data` and `/models`, and then supplying the parameters that fastText accept. For example:
 ```sh
 docker run \
     --rm \

@@ -11,11 +11,8 @@ RUN apt-get update \
     && apt-get update \
     && apt-get install -y \
         make \
-        git \
-        curl \
-        vim \
-    && apt-get install -y \
-        build-essential 
+        build-essential \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/facebookresearch/fastText/archive/v0.9.2.zip \
   && unzip v0.9.2.zip \
@@ -24,4 +21,3 @@ RUN wget https://github.com/facebookresearch/fastText/archive/v0.9.2.zip \
   && make
 
 ENTRYPOINT ["/fastText-0.9.2/fasttext"]
-CMD ["supervised", "-input /data", "-output /model"]
