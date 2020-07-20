@@ -43,10 +43,24 @@ docker run \
     --rm \
     -v $DATA_DIR:/data \
     -v $MODELS_DIR:/models \
-    fasttext supervised \
+    yarongon/fasttext supervised \
       -input /data/<training data> \
       -output /models/<output model filename>
 ```
 
 * `DATA_DIR` is the full path of the input directory that contains the training data, e.g., `TRAIN_DIR=/data/train/`.
 * `MODELS_DIR` is the full path to the output directory that stores the fastText trained models `model.bin` to be generated, e.g., `MODEL_DIR=/data/models/`.
+
+Another example, using fastText's autovalidation:
+```sh
+docker run \
+    --rm \
+    -v $DATA_DIR:/data \
+    -v $MODELS_DIR:/models \
+    yarongon/fasttext supervised \
+      -input /data/<training data> \
+      -output /models/<output model filename> \
+      -autotune-validation /data/<validation data> \
+      -autotune-duration 10000 \
+      -verbose 5
+```
