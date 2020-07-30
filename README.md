@@ -1,12 +1,12 @@
 # Docker Container for fastText Model Training
 
-[fastText](https://fasttext.cc/) is a library for learning text classification and word representations,
+[fastText](https://fasttext.cc/) is a library for training models for text classification and word representations,
 created by [Fascebook AI Research](https://research.fb.com/category/facebook-ai-research/).
 
 From the official fastText documentation:
-> What is fastText?\
+> **What is fastText?**\
 \
-FastText is an open-source, free, lightweight library that allows users to learn text representations and text classifiers. It works on standard, generic hardware. Models can later be reduced in size to even fit on mobile devices.
+FastText is an open-source, free, lightweight library that allows users to learn text representations and text classifiers. It works on standard, generic hardware.
 
 Compiling fastText requires C++ build tool and other stuff that are usually not installed in non-C++ development machines, and differ between different OSs.
 This Dockerfile will create a small image that compiles everything for you.
